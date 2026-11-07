@@ -1,0 +1,1026 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#190407">
+<title>Happy Diwali | Shukla Family</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold:#ffda78;
+  --gold-light:#fff5ca;
+  --orange:#ff8b25;
+  --maroon:#26070d;
+  --cream:#fff1ce;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html {scroll-behavior:smooth}
+
+body {
+  min-height:100vh;
+  min-height:100svh;
+  overflow-x:hidden;
+  background:
+    radial-gradient(ellipse at 50% 30%,#641b16 0%,#310b11 45%,#100307 100%);
+  color:white;
+  font-family:Poppins,sans-serif;
+}
+
+button {font:inherit}
+
+#sky {
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:0;
+}
+
+.hidden {display:none!important}
+
+/* INTRO */
+
+.intro {
+  position:fixed;
+  inset:0;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  padding:25px;
+  background:
+    radial-gradient(ellipse at center,#641a13,#28070d 65%,#100307);
+  transition:opacity 1.2s,visibility 1.2s;
+}
+
+.intro.hide {
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.intro-label {
+  font-size:10px;
+  letter-spacing:5px;
+  color:var(--gold);
+  margin-bottom:30px;
+}
+
+.intro-heading {
+  font-family:Cinzel,serif;
+  font-size:clamp(25px,7vw,42px);
+  line-height:1.6;
+  color:#fff0c8;
+}
+
+.big-diya {
+  font-size:110px;
+  margin:30px 0;
+  cursor:pointer;
+  filter:drop-shadow(0 0 25px #ff9b20);
+  animation:diyaGlow 1.5s infinite alternate;
+}
+
+.tap-text {
+  font-size:12px;
+  letter-spacing:3px;
+  color:#ffda91;
+  animation:pulse 1.5s infinite;
+}
+
+.tap-arrow {
+  font-size:25px;
+  margin-top:18px;
+  color:gold;
+  animation:float 1.5s infinite;
+}
+
+/* MAIN */
+
+.main {
+  position:relative;
+  z-index:2;
+  min-height:100svh;
+  padding:85px 17px 45px;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity 1.5s,transform 1.5s;
+}
+
+.main.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.topbar {
+  position:absolute;
+  top:18px;
+  left:0;
+  width:100%;
+  padding:0 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.topbar-brand {
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:600;
+}
+
+.sound-btn {
+  border:1px solid #ffcf6b70;
+  border-radius:30px;
+  padding:9px 13px;
+  background:#ffffff0b;
+  color:var(--gold);
+  font-size:11px;
+  cursor:pointer;
+}
+
+.eyebrow {
+  font-size:10px;
+  letter-spacing:5px;
+  color:#ffdc98;
+  animation:fadeUp 1.5s both;
+}
+
+.script {
+  font-family:'Great Vibes',cursive;
+  color:#fff0ca;
+  font-size:clamp(33px,9vw,55px);
+  text-shadow:0 0 18px #ff9c22;
+  animation:fadeUp 2s both;
+  margin-top:18px;
+}
+
+.hero {
+  font-family:Cinzel,serif;
+  font-size:clamp(48px,13vw,95px);
+  font-weight:900;
+  line-height:1.12;
+  margin:20px 0;
+  background:linear-gradient(
+    180deg,#fffbdc,#ffd45e,#ff941f,#fff0a0
+  );
+  background-size:100% 200%;
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 16px #ff9c26);
+  animation:goldShine 3s infinite alternate,heroEnter 1.5s both;
+}
+
+.hero span {display:block}
+
+.ornament {
+  color:gold;
+  letter-spacing:8px;
+  margin:12px 0 24px;
+  font-size:15px;
+}
+
+.wish-card {
+  width:100%;
+  max-width:450px;
+  padding:25px 20px;
+  border-radius:23px;
+  border:1px solid #ffcf6b65;
+  background:linear-gradient(145deg,#ffffff0d,#ff9e150c);
+  box-shadow:0 0 35px #ff9c1515,inset 0 0 30px #ffcc4409;
+  backdrop-filter:blur(12px);
+  animation:fadeUp 2.5s both;
+}
+
+.wish-card p {
+  font-size:13px;
+  line-height:2;
+  font-weight:300;
+  color:#ffe9c9;
+}
+
+.wish-card strong {color:var(--gold)}
+
+/* FAMILY SHOWCASE */
+
+.family-showcase {
+  width:100%;
+  max-width:500px;
+  margin:40px auto 25px;
+  padding:42px 17px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid #e6b95d;
+  border-radius:23px;
+  background:
+    radial-gradient(ellipse at center,#641c16,#2a080c 75%);
+  box-shadow:
+    0 0 30px #ffae3040,
+    inset 0 0 35px #ffbf3515;
+  animation:familyReveal 2s ease both;
+}
+
+.family-showcase::before {
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px solid #d5a74d80;
+  border-radius:16px;
+  pointer-events:none;
+}
+
+.family-top {
+  color:#ffe1a0;
+  font-size:10px;
+  letter-spacing:3px;
+  margin-bottom:18px;
+}
+
+.family-emblem {
+  font-size:65px;
+  color:#ffdc81;
+  text-shadow:0 0 25px gold;
+  animation:emblemRotate 15s linear infinite;
+}
+
+.family-line {
+  width:78%;
+  height:1px;
+  margin:20px auto;
+  background:linear-gradient(
+    90deg,transparent,#ffe08a,#fff5c4,#ffe08a,transparent
+  );
+  box-shadow:0 0 12px gold;
+}
+
+.family-pretitle {
+  font-size:10px;
+  letter-spacing:4px;
+  color:#e9c58a;
+  margin-top:18px;
+}
+
+.family-name {
+  font-family:Cinzel,serif;
+  font-size:clamp(46px,13vw,70px);
+  font-weight:900;
+  line-height:1.17;
+  margin:17px 0;
+  background:linear-gradient(
+    180deg,#fffbd2,#ffcf58,#d98719,#fff0a0
+  );
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 15px #ffb52c);
+  animation:nameGlow 2s infinite alternate;
+  position:relative;
+}
+
+.family-name span {
+  display:block;
+  font-size:.70em;
+  letter-spacing:10px;
+}
+
+.family-blessing {
+  color:#ffedce;
+  font-family:'Great Vibes',cursive;
+  font-size:30px;
+  line-height:1.55;
+  margin:22px 0;
+}
+
+.family-hearts {
+  font-size:27px;
+  margin:20px 0;
+  filter:drop-shadow(0 0 12px gold);
+  animation:heartbeat 2s infinite;
+}
+
+.family-signature {
+  font-size:9px;
+  letter-spacing:2px;
+  color:#d9b878;
+  line-height:1.8;
+}
+
+/* DIYAS */
+
+.diya-row {
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  margin:30px 0;
+}
+
+.mini-diya {
+  font-size:38px;
+  filter:drop-shadow(0 0 15px #ffae22);
+  animation:diyaGlow 1.3s infinite alternate;
+}
+
+.mini-diya:nth-child(2) {animation-delay:.3s}
+.mini-diya:nth-child(3) {animation-delay:.6s}
+
+/* SURPRISE */
+
+.surprise {
+  font-family:'Great Vibes',cursive;
+  font-size:29px;
+  color:#ffe3a5;
+  margin:15px 0 25px;
+  min-height:40px;
+  transition:opacity .4s;
+}
+
+/* BUTTONS */
+
+.actions {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:13px;
+  width:100%;
+}
+
+.action-btn {
+  width:min(100%,320px);
+  min-height:53px;
+  border-radius:50px;
+  border:none;
+  background:linear-gradient(110deg,#fff1ad,#ffb52f,#fff0a0);
+  color:#57120a;
+  font-weight:800;
+  font-size:12px;
+  letter-spacing:1px;
+  cursor:pointer;
+  box-shadow:0 0 20px #ffae38;
+  transition:transform .2s;
+}
+
+.action-btn:active {transform:scale(.94)}
+
+.secondary-btn {
+  background:#ffffff0c;
+  color:#ffdc91;
+  border:1px solid #ffcf6b80;
+  box-shadow:none;
+}
+
+/* FLOATING DECORATION */
+
+.float-deco {
+  position:fixed;
+  z-index:1;
+  pointer-events:none;
+  font-size:34px;
+  animation:float 5s ease-in-out infinite;
+}
+
+.d1 {top:15%;left:4%}
+.d2 {top:22%;right:4%;animation-delay:1s}
+.d3 {bottom:12%;left:5%;animation-delay:2s}
+.d4 {bottom:18%;right:5%;animation-delay:3s}
+
+/* FOOTER */
+
+.footer {
+  color:#d6b27c;
+  font-size:9px;
+  letter-spacing:2px;
+  line-height:2.3;
+  margin-top:35px;
+  padding-bottom:20px;
+}
+
+/* ANIMATIONS */
+
+@keyframes diyaGlow {
+  from {transform:scale(.95);filter:drop-shadow(0 0 10px orange)}
+  to {transform:scale(1.08);filter:drop-shadow(0 0 28px gold)}
+}
+
+@keyframes pulse {
+  50% {opacity:.4;transform:scale(.97)}
+}
+
+@keyframes float {
+  0%,100% {transform:translateY(0) rotate(-5deg)}
+  50% {transform:translateY(-20px) rotate(5deg)}
+}
+
+@keyframes fadeUp {
+  from {opacity:0;transform:translateY(25px)}
+  to {opacity:1;transform:translateY(0)}
+}
+
+@keyframes heroEnter {
+  from {opacity:0;transform:scale(.5)}
+  to {opacity:1;transform:scale(1)}
+}
+
+@keyframes goldShine {
+  from {background-position:0 0}
+  to {background-position:0 100%}
+}
+
+@keyframes familyReveal {
+  from {opacity:0;transform:scale(.7) translateY(40px)}
+  to {opacity:1;transform:scale(1) translateY(0)}
+}
+
+@keyframes nameGlow {
+  from {filter:drop-shadow(0 0 8px #ffb52c)}
+  to {filter:drop-shadow(0 0 30px gold)}
+}
+
+@keyframes emblemRotate {
+  to {transform:rotate(360deg)}
+}
+
+@keyframes heartbeat {
+  50% {transform:scale(1.15)}
+}
+
+.petal {
+  position:fixed;
+  top:-40px;
+  z-index:5;
+  pointer-events:none;
+  animation:petalFall linear forwards;
+}
+
+@keyframes petalFall {
+  to {transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+
+@media(max-width:380px) {
+  .main {padding-left:14px;padding-right:14px}
+  .family-showcase {padding:38px 12px}
+  .family-name {font-size:45px}
+  .family-name span {letter-spacing:7px}
+  .wish-card {padding:20px 15px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="sky"></canvas>
+
+<!-- INTRO SCREEN -->
+
+<section class="intro" id="intro">
+
+  <div class="intro-label">✦ A SPECIAL FESTIVE SURPRISE ✦</div>
+
+  <div class="intro-heading">
+    Something magical<br>
+    is waiting for you...
+  </div>
+
+  <div class="big-diya" onclick="startCelebration()">🪔</div>
+
+  <div class="tap-text">TAP THE DIYA TO BEGIN</div>
+  <div class="tap-arrow">↓</div>
+
+</section>
+
+<!-- DECORATIONS -->
+
+<div class="float-deco d1">🏮</div>
+<div class="float-deco d2">✨</div>
+<div class="float-deco d3">🪔</div>
+<div class="float-deco d4">🏮</div>
+
+<!-- MAIN WEBSITE -->
+
+<main class="main" id="main">
+
+  <div class="topbar">
+    <div class="topbar-brand">SHUKLA FAMILY ✦</div>
+    <button class="sound-btn" id="soundBtn" onclick="toggleSound()">
+      🔇 SOUND OFF
+    </button>
+  </div>
+
+  <div class="eyebrow">✦ THE FESTIVAL OF LIGHTS ✦</div>
+
+  <div class="script">May your life shine brighter...</div>
+
+  <h1 class="hero">
+    <span>HAPPY</span>
+    <span>DIWALI</span>
+  </h1>
+
+  <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
+
+  <div class="wish-card">
+    <p>
+      May this beautiful festival bring
+      <strong>endless happiness,</strong>
+      prosperity, good health and success
+      into your life.
+
+      <br><br>
+
+      May every diya illuminate a new dream,
+      every sparkle bring a reason to smile,
+      and every moment create memories
+      worth cherishing.
+
+      <br><br>
+
+      Sending you and your family
+      lots of love, warmth and blessings!
+    </p>
+  </div>
+
+  <!-- SHUKLA FAMILY GRAND SHOWCASE -->
+
+  <section class="family-showcase">
+
+    <div class="family-top">
+      ✦ WITH LOVE & WARM WISHES ✦
+    </div>
+
+    <div class="family-emblem">❖</div>
+
+    <div class="family-line"></div>
+
+    <div class="family-pretitle">
+      A FESTIVE GREETING FROM
+    </div>
+
+    <h2 class="family-name">
+      SHUKLA
+      <span>FAMILY</span>
+    </h2>
+
+    <div class="family-line"></div>
+
+    <div class="family-blessing">
+      Together in happiness,<br>
+      United by love,<br>
+      Blessed with prosperity.
+    </div>
+
+    <div class="family-hearts">✧ 🪔 ✧</div>
+
+    <div class="family-signature">
+      CELEBRATING LIGHT, LOVE & TOGETHERNESS
+    </div>
+
+  </section>
+
+  <div class="diya-row">
+    <span class="mini-diya">🪔</span>
+    <span class="mini-diya">🪔</span>
+    <span class="mini-diya">🪔</span>
+  </div>
+
+  <div class="surprise" id="surprise">
+    ✨ Spreading happiness & light ✨
+  </div>
+
+  <div class="actions">
+
+    <button class="action-btn" onclick="megaCelebration()">
+      🎆 LET'S CELEBRATE! 🎆
+    </button>
+
+    <button class="action-btn secondary-btn" onclick="newWish()">
+      ✨ UNLOCK A SURPRISE WISH
+    </button>
+
+    <button class="action-btn secondary-btn" onclick="shareWish()">
+      💌 SHARE THE HAPPINESS
+    </button>
+
+  </div>
+
+  <div class="footer">
+    LIGHT • LOVE • LAUGHTER • PROSPERITY
+    <br>
+    MADE WITH ❤️ BY SHUKLA FAMILY
+  </div>
+
+</main>
+
+<script>
+
+// ====================================
+// FIREWORKS ENGINE
+// ====================================
+
+const canvas=document.getElementById("sky");
+const ctx=canvas.getContext("2d");
+
+let particles=[];
+let rockets=[];
+let active=false;
+let lastFrame=0;
+let launchTimer=null;
+let petalTimer=null;
+
+function resize() {
+  const dpr=Math.min(devicePixelRatio||1,2);
+
+  canvas.width=innerWidth*dpr;
+  canvas.height=innerHeight*dpr;
+
+  canvas.style.width=innerWidth+"px";
+  canvas.style.height=innerHeight+"px";
+
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+
+resize();
+window.addEventListener("resize",resize);
+
+const colors=[
+  "#ffda55","#ff7417","#ffffff",
+  "#ff3e73","#ffad29","#fff5bd",
+  "#ff69b4","#9df5ff"
+];
+
+function burst(x,y,power=1) {
+
+  const count=Math.floor(65*power);
+
+  for(let i=0;i<count;i++) {
+
+    const angle=Math.random()*Math.PI*2;
+    const speed=(Math.random()*5+1)*power;
+
+    particles.push({
+      x,y,
+      vx:Math.cos(angle)*speed,
+      vy:Math.sin(angle)*speed,
+      life:1,
+      size:Math.random()*2.7+1,
+      color:colors[Math.floor(Math.random()*colors.length)]
+    });
+  }
+
+  if(particles.length>1200) {
+    particles.splice(0,particles.length-1200);
+  }
+}
+
+function launch(x=Math.random()*innerWidth) {
+
+  if(rockets.length>12) return;
+
+  rockets.push({
+    x,
+    y:innerHeight,
+    target:Math.random()*innerHeight*.55+50,
+    speed:Math.random()*4+7
+  });
+}
+
+function animate(time=0) {
+
+  if(!active) return;
+
+  if(time-lastFrame>30) {
+
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+
+    rockets.forEach((r,i)=>{
+
+      r.y-=r.speed;
+
+      ctx.fillStyle="#ffe080";
+      ctx.beginPath();
+      ctx.arc(r.x,r.y,3,0,Math.PI*2);
+      ctx.fill();
+
+      if(r.y<=r.target) {
+        burst(r.x,r.y);
+        rockets.splice(i,1);
+      }
+    });
+
+    particles.forEach((p,i)=>{
+
+      p.x+=p.vx;
+      p.y+=p.vy;
+      p.vy+=.035;
+
+      p.vx*=.985;
+      p.vy*=.985;
+      p.life-=.016;
+
+      ctx.globalAlpha=Math.max(0,p.life);
+      ctx.fillStyle=p.color;
+
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fill();
+
+      if(p.life<=0) particles.splice(i,1);
+
+    });
+
+    ctx.globalAlpha=1;
+    lastFrame=time;
+  }
+
+  requestAnimationFrame(animate);
+}
+
+// ====================================
+// SOUND EFFECTS
+// ====================================
+
+let soundOn=false;
+let audioContext=null;
+
+function playChime() {
+
+  if(!soundOn) return;
+
+  try {
+
+    if(!audioContext) {
+      audioContext=new (window.AudioContext||window.webkitAudioContext)();
+    }
+
+    if(audioContext.state==="suspended") {
+      audioContext.resume();
+    }
+
+    const notes=[523.25,659.25,783.99,1046.5];
+
+    notes.forEach((frequency,i)=>{
+
+      const osc=audioContext.createOscillator();
+      const gain=audioContext.createGain();
+
+      const start=audioContext.currentTime+i*.12;
+
+      osc.type="sine";
+      osc.frequency.value=frequency;
+
+      gain.gain.setValueAtTime(.0001,start);
+      gain.gain.exponentialRampToValueAtTime(.09,start+.03);
+      gain.gain.exponentialRampToValueAtTime(.0001,start+.6);
+
+      osc.connect(gain);
+      gain.connect(audioContext.destination);
+
+      osc.start(start);
+      osc.stop(start+.7);
+
+    });
+
+  } catch(e) {
+    console.log("Audio unavailable");
+  }
+}
+
+function toggleSound() {
+
+  soundOn=!soundOn;
+
+  document.getElementById("soundBtn").innerText=
+    soundOn?"🔊 SOUND ON":"🔇 SOUND OFF";
+
+  if(soundOn) playChime();
+}
+
+// ====================================
+// START CELEBRATION
+// ====================================
+
+function startCelebration() {
+
+  if(active) return;
+
+  document.getElementById("intro").classList.add("hide");
+
+  document.getElementById("main").classList.add("visible");
+
+  active=true;
+
+  animate();
+
+  const positions=[
+    [.2,.25],[.8,.25],[.5,.15],
+    [.15,.55],[.85,.55],[.5,.4]
+  ];
+
+  positions.forEach((pos,i)=>{
+
+    setTimeout(()=>{
+      burst(innerWidth*pos[0],innerHeight*pos[1],1.5);
+    },i*350);
+
+  });
+
+  playChime();
+
+  launchTimer=setInterval(()=>{
+    if(active) launch();
+  },900);
+
+  petalTimer=setInterval(createPetal,350);
+}
+
+// ====================================
+// FALLING FLOWER PETALS
+// ====================================
+
+function createPetal() {
+
+  if(!active) return;
+
+  const p=document.createElement("div");
+
+  p.className="petal";
+
+  p.textContent=["🌸","🌺","✨","🌼","💮"][
+    Math.floor(Math.random()*5)
+  ];
+
+  p.style.left=Math.random()*100+"vw";
+  p.style.fontSize=(Math.random()*15+13)+"px";
+
+  const duration=Math.random()*5+5;
+
+  p.style.animationDuration=duration+"s";
+
+  document.body.appendChild(p);
+
+  setTimeout(()=>p.remove(),duration*1000);
+}
+
+// ====================================
+// TOUCH FIREWORKS
+// ====================================
+
+document.addEventListener("pointerdown",e=>{
+
+  if(!active) return;
+
+  if(e.target.closest("button")) return;
+
+  if(e.target.closest(".family-showcase")) {
+    burst(e.clientX,e.clientY,1.1);
+    return;
+  }
+
+  burst(e.clientX,e.clientY,.75);
+
+});
+
+// ====================================
+// GRAND CELEBRATION BUTTON
+// ====================================
+
+function megaCelebration() {
+
+  for(let i=0;i<15;i++) {
+
+    setTimeout(()=>{
+
+      burst(
+        Math.random()*innerWidth,
+        Math.random()*innerHeight*.7,
+        1.5
+      );
+
+      launch(Math.random()*innerWidth);
+
+    },i*150);
+
+  }
+
+  playChime();
+}
+
+// ====================================
+// SURPRISE WISHES
+// ====================================
+
+const wishes=[
+  "May your dreams shine like these lights! ✨",
+  "May Goddess Lakshmi bless your home! 🪷",
+  "Wishing you unlimited happiness! ❤️",
+  "May success follow you everywhere! 🌟",
+  "May your family always stay blessed! 🪔",
+  "Let love and laughter fill your home! 💛",
+  "A thousand lights, a million smiles! 🎆",
+  "May every new beginning bring prosperity! 🌸"
+];
+
+let previous=-1;
+
+function newWish() {
+
+  let index;
+
+  do {
+    index=Math.floor(Math.random()*wishes.length);
+  } while(index===previous);
+
+  previous=index;
+
+  const element=document.getElementById("surprise");
+
+  element.style.opacity=0;
+
+  setTimeout(()=>{
+
+    element.textContent=wishes[index];
+    element.style.opacity=1;
+
+    burst(innerWidth/2,innerHeight*.65,.9);
+
+    playChime();
+
+  },350);
+}
+
+// ====================================
+// WHATSAPP / NATIVE SHARE
+// ====================================
+
+async function shareWish() {
+
+  const text=
+    "🪔✨ HAPPY DIWALI! ✨🪔\n\n"+
+    "May this beautiful festival bring happiness, prosperity, good health and endless blessings into your life.\n\n"+
+    "Together in happiness, United by love, Blessed with prosperity.\n\n"+
+    "With Love & Warm Wishes,\n"+
+    "SHUKLA FAMILY ❤️";
+
+  const shareData={
+    title:"Happy Diwali - Shukla Family",
+    text:text,
+    url:location.href
+  };
+
+  try {
+
+    if(navigator.share) {
+      await navigator.share(shareData);
+    } else {
+
+      const whatsapp=
+        "https://wa.me/?text="+
+        encodeURIComponent(text+"\n"+location.href);
+
+      window.open(whatsapp,"_blank");
+
+    }
+
+  } catch(e) {
+
+    if(e.name!=="AbortError") {
+
+      window.open(
+        "https://wa.me/?text="+
+        encodeURIComponent(text+"\n"+location.href),
+        "_blank"
+      );
+
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>
