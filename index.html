@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#190407">
+
 <title>Happy Diwali | Shukla Family</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +15,6 @@
   --gold:#ffda78;
   --gold-light:#fff5ca;
   --orange:#ff8b25;
-  --maroon:#26070d;
   --cream:#fff1ce;
 }
 
@@ -48,68 +48,7 @@ button {font:inherit}
   z-index:0;
 }
 
-.hidden {display:none!important}
-
-/* INTRO */
-
-.intro {
-  position:fixed;
-  inset:0;
-  z-index:20;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  text-align:center;
-  padding:25px;
-  background:
-    radial-gradient(ellipse at center,#641a13,#28070d 65%,#100307);
-  transition:opacity 1.2s,visibility 1.2s;
-}
-
-.intro.hide {
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
-
-.intro-label {
-  font-size:10px;
-  letter-spacing:5px;
-  color:var(--gold);
-  margin-bottom:30px;
-}
-
-.intro-heading {
-  font-family:Cinzel,serif;
-  font-size:clamp(25px,7vw,42px);
-  line-height:1.6;
-  color:#fff0c8;
-}
-
-.big-diya {
-  font-size:110px;
-  margin:30px 0;
-  cursor:pointer;
-  filter:drop-shadow(0 0 25px #ff9b20);
-  animation:diyaGlow 1.5s infinite alternate;
-}
-
-.tap-text {
-  font-size:12px;
-  letter-spacing:3px;
-  color:#ffda91;
-  animation:pulse 1.5s infinite;
-}
-
-.tap-arrow {
-  font-size:25px;
-  margin-top:18px;
-  color:gold;
-  animation:float 1.5s infinite;
-}
-
-/* MAIN */
+/* MAIN WEBSITE */
 
 .main {
   position:relative;
@@ -120,14 +59,7 @@ button {font:inherit}
   align-items:center;
   flex-direction:column;
   text-align:center;
-  opacity:0;
-  transform:translateY(30px);
-  transition:opacity 1.5s,transform 1.5s;
-}
-
-.main.visible {
-  opacity:1;
-  transform:translateY(0);
+  animation:pageReveal 1.5s ease both;
 }
 
 .topbar {
@@ -158,6 +90,8 @@ button {font:inherit}
   cursor:pointer;
 }
 
+/* HAPPY DIWALI */
+
 .eyebrow {
   font-size:10px;
   letter-spacing:5px;
@@ -168,7 +102,7 @@ button {font:inherit}
 .script {
   font-family:'Great Vibes',cursive;
   color:#fff0ca;
-  font-size:clamp(33px,9vw,55px);
+  font-size:clamp(32px,9vw,53px);
   text-shadow:0 0 18px #ff9c22;
   animation:fadeUp 2s both;
   margin-top:18px;
@@ -196,37 +130,16 @@ button {font:inherit}
 .ornament {
   color:gold;
   letter-spacing:8px;
-  margin:12px 0 24px;
+  margin:12px 0 22px;
   font-size:15px;
 }
 
-.wish-card {
-  width:100%;
-  max-width:450px;
-  padding:25px 20px;
-  border-radius:23px;
-  border:1px solid #ffcf6b65;
-  background:linear-gradient(145deg,#ffffff0d,#ff9e150c);
-  box-shadow:0 0 35px #ff9c1515,inset 0 0 30px #ffcc4409;
-  backdrop-filter:blur(12px);
-  animation:fadeUp 2.5s both;
-}
-
-.wish-card p {
-  font-size:13px;
-  line-height:2;
-  font-weight:300;
-  color:#ffe9c9;
-}
-
-.wish-card strong {color:var(--gold)}
-
-/* FAMILY SHOWCASE */
+/* SHUKLA FAMILY SHOWCASE */
 
 .family-showcase {
   width:100%;
   max-width:500px;
-  margin:40px auto 25px;
+  margin:10px auto 30px;
   padding:42px 17px;
   position:relative;
   overflow:hidden;
@@ -325,6 +238,29 @@ button {font:inherit}
   line-height:1.8;
 }
 
+/* WISHES */
+
+.wish-card {
+  width:100%;
+  max-width:450px;
+  padding:25px 20px;
+  border-radius:23px;
+  border:1px solid #ffcf6b65;
+  background:linear-gradient(145deg,#ffffff0d,#ff9e150c);
+  box-shadow:0 0 35px #ff9c1515,inset 0 0 30px #ffcc4409;
+  backdrop-filter:blur(12px);
+  animation:fadeUp 2.5s both;
+}
+
+.wish-card p {
+  font-size:13px;
+  line-height:2;
+  font-weight:300;
+  color:#ffe9c9;
+}
+
+.wish-card strong {color:var(--gold)}
+
 /* DIYAS */
 
 .diya-row {
@@ -388,7 +324,7 @@ button {font:inherit}
   box-shadow:none;
 }
 
-/* FLOATING DECORATION */
+/* FLOATING DECORATIONS */
 
 .float-deco {
   position:fixed;
@@ -416,13 +352,14 @@ button {font:inherit}
 
 /* ANIMATIONS */
 
+@keyframes pageReveal {
+  from {opacity:0;transform:translateY(25px)}
+  to {opacity:1;transform:translateY(0)}
+}
+
 @keyframes diyaGlow {
   from {transform:scale(.95);filter:drop-shadow(0 0 10px orange)}
   to {transform:scale(1.08);filter:drop-shadow(0 0 28px gold)}
-}
-
-@keyframes pulse {
-  50% {opacity:.4;transform:scale(.97)}
 }
 
 @keyframes float {
@@ -497,32 +434,14 @@ button {font:inherit}
 
 <canvas id="sky"></canvas>
 
-<!-- INTRO SCREEN -->
-
-<section class="intro" id="intro">
-
-  <div class="intro-label">✦ A SPECIAL FESTIVE SURPRISE ✦</div>
-
-  <div class="intro-heading">
-    Something magical<br>
-    is waiting for you...
-  </div>
-
-  <div class="big-diya" onclick="startCelebration()">🪔</div>
-
-  <div class="tap-text">TAP THE DIYA TO BEGIN</div>
-  <div class="tap-arrow">↓</div>
-
-</section>
-
-<!-- DECORATIONS -->
+<!-- FLOATING DECORATIONS -->
 
 <div class="float-deco d1">🏮</div>
 <div class="float-deco d2">✨</div>
 <div class="float-deco d3">🪔</div>
 <div class="float-deco d4">🏮</div>
 
-<!-- MAIN WEBSITE -->
+<!-- MAIN WEBSITE: DIRECT GREETING -->
 
 <main class="main" id="main">
 
@@ -544,28 +463,7 @@ button {font:inherit}
 
   <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
 
-  <div class="wish-card">
-    <p>
-      May this beautiful festival bring
-      <strong>endless happiness,</strong>
-      prosperity, good health and success
-      into your life.
-
-      <br><br>
-
-      May every diya illuminate a new dream,
-      every sparkle bring a reason to smile,
-      and every moment create memories
-      worth cherishing.
-
-      <br><br>
-
-      Sending you and your family
-      lots of love, warmth and blessings!
-    </p>
-  </div>
-
-  <!-- SHUKLA FAMILY GRAND SHOWCASE -->
+  <!-- SHUKLA FAMILY NOW DIRECTLY BELOW HAPPY DIWALI -->
 
   <section class="family-showcase">
 
@@ -601,6 +499,29 @@ button {font:inherit}
     </div>
 
   </section>
+
+  <!-- FESTIVE WISHES AFTER FAMILY CARD -->
+
+  <div class="wish-card">
+    <p>
+      May this beautiful festival bring
+      <strong>endless happiness,</strong>
+      prosperity, good health and success
+      into your life.
+
+      <br><br>
+
+      May every diya illuminate a new dream,
+      every sparkle bring a reason to smile,
+      and every moment create memories
+      worth cherishing.
+
+      <br><br>
+
+      Sending you and your family
+      lots of love, warmth and blessings!
+    </p>
+  </div>
 
   <div class="diya-row">
     <span class="mini-diya">🪔</span>
@@ -647,10 +568,8 @@ const ctx=canvas.getContext("2d");
 
 let particles=[];
 let rockets=[];
-let active=false;
+let active=true;
 let lastFrame=0;
-let launchTimer=null;
-let petalTimer=null;
 
 function resize() {
   const dpr=Math.min(devicePixelRatio||1,2);
@@ -750,7 +669,6 @@ function animate(time=0) {
       ctx.fill();
 
       if(p.life<=0) particles.splice(i,1);
-
     });
 
     ctx.globalAlpha=1;
@@ -821,50 +739,10 @@ function toggleSound() {
 }
 
 // ====================================
-// START CELEBRATION
-// ====================================
-
-function startCelebration() {
-
-  if(active) return;
-
-  document.getElementById("intro").classList.add("hide");
-
-  document.getElementById("main").classList.add("visible");
-
-  active=true;
-
-  animate();
-
-  const positions=[
-    [.2,.25],[.8,.25],[.5,.15],
-    [.15,.55],[.85,.55],[.5,.4]
-  ];
-
-  positions.forEach((pos,i)=>{
-
-    setTimeout(()=>{
-      burst(innerWidth*pos[0],innerHeight*pos[1],1.5);
-    },i*350);
-
-  });
-
-  playChime();
-
-  launchTimer=setInterval(()=>{
-    if(active) launch();
-  },900);
-
-  petalTimer=setInterval(createPetal,350);
-}
-
-// ====================================
-// FALLING FLOWER PETALS
+// FLOWER PETALS
 // ====================================
 
 function createPetal() {
-
-  if(!active) return;
 
   const p=document.createElement("div");
 
@@ -887,19 +765,42 @@ function createPetal() {
 }
 
 // ====================================
+// AUTO START CELEBRATION
+// ====================================
+
+// Fireworks begin automatically on page load.
+
+animate();
+
+function automaticFireworks() {
+  launch();
+}
+
+setInterval(automaticFireworks,900);
+setInterval(createPetal,350);
+
+// Grand opening fireworks
+
+const positions=[
+  [.2,.25],[.8,.25],[.5,.15],
+  [.15,.55],[.85,.55],[.5,.4]
+];
+
+positions.forEach((pos,i)=>{
+
+  setTimeout(()=>{
+    burst(innerWidth*pos[0],innerHeight*pos[1],1.5);
+  },i*350);
+
+});
+
+// ====================================
 // TOUCH FIREWORKS
 // ====================================
 
 document.addEventListener("pointerdown",e=>{
 
-  if(!active) return;
-
   if(e.target.closest("button")) return;
-
-  if(e.target.closest(".family-showcase")) {
-    burst(e.clientX,e.clientY,1.1);
-    return;
-  }
 
   burst(e.clientX,e.clientY,.75);
 
@@ -974,7 +875,7 @@ function newWish() {
 }
 
 // ====================================
-// WHATSAPP / NATIVE SHARE
+// WHATSAPP SHARING
 // ====================================
 
 async function shareWish() {
@@ -998,11 +899,11 @@ async function shareWish() {
       await navigator.share(shareData);
     } else {
 
-      const whatsapp=
+      window.open(
         "https://wa.me/?text="+
-        encodeURIComponent(text+"\n"+location.href);
-
-      window.open(whatsapp,"_blank");
+        encodeURIComponent(text+"\n"+location.href),
+        "_blank"
+      );
 
     }
 
